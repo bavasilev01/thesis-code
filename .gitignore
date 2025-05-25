@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/*
+.vscode/*
+.DS_Store
+data/mimic-cxr/mimic-cxr-jpg/*
+data/mimic-cxr/mimic-cxr-reports/*
+models/*
+src/wandb/*
