@@ -169,5 +169,13 @@ class MIMIC_CXR_Processor:
         no_references = True
         if re.search(r'_+', report_text):
             no_references = False
+        # Check for presence of references to views
+        no_views = True
+        if re.search(r'PA|lateral', report_text):
+            no_views = False
+        
+        has_findings_and_impression = any(
+            section in report_text.lower() for section in ["findings", "impression"]
+        )
 
-        return sufficient_len and no_references
+        return sufficient_len and no_references and no_views

@@ -47,6 +47,7 @@ class LLaVAOneVisionDataset(Dataset):
         input_ids      = enc_full.input_ids.squeeze(0)        # [L]
         attention_full = enc_full.attention_mask.squeeze(0)   # [L]
         pixel_values   = enc_full.pixel_values.squeeze(0)     # [3,H,W]
+        image_sizes = image_sizes.squeeze(0)
 
         # 2) user‐only encoding (just the user turn + gen‐prompt)
         user_conv = [ conv[0] ]   # keep only {"role":"user",...}
@@ -82,7 +83,7 @@ if __name__ == "__main__":
     from transformers import LlavaOnevisionProcessor
 
     processor = LlavaOnevisionProcessor.from_pretrained("../models/llava-onevision-qwen2-7b-ov-hf")
-    mimic_dataset = MIMICDataset(dataset_csv="../data/data_pa.csv")
+    mimic_dataset = MIMICDataset(dataset_csv="../data/data.csv")
     dataset = LLaVAOneVisionDataset(mimic_dataset, processor, max_length=4096, mode='report')
     tokenizer = processor.tokenizer
 

@@ -194,14 +194,14 @@ if __name__ == "__main__":
     report_dir = '../data/mimic-cxr/mimic-cxr-reports/files'
     struct_path = '../data/mimic-cxr/mimic-cxr-2.0.0-chexpert.csv'
     metadata_path = '../data/mimic-cxr/mimic-cxr-2.0.0-metadata.csv'
-    output_csv = '../data/data_pa.csv'
+    output_csv = '../data/data_8k.csv'
 
     # First create the dataset table
-    create_dataset = False
+    create_dataset = True
     if create_dataset:
         logging.info("Creating dataset table...")
         creator = MIMICDatasetCreator(image_dir, report_dir, struct_path, metadata_path)
-        dataset_table = creator.create_dataset_table(output_path=output_csv)
+        dataset_table = creator.create_dataset_table(output_path=output_csv, n_samples=8000)
         logging.info(f"Created dataset table with {len(dataset_table)} entries at {output_csv}")
 
     ds = MIMICDataset(dataset_csv=output_csv)
