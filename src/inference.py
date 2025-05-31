@@ -10,9 +10,9 @@ from prompt import prompt_mimic, prompt_mimic_impression  # the exact same promp
 def run_inference(num_examples: int = 10):
     # ─── 1) Config & device ──────────────────────────────────────────────────
     base_model_path    = "../models/llava-onevision-qwen2-7b-ov-hf"
-    lora_adapter_path = "../models/llava-lora-output/checkpoint-1350"
+    lora_adapter_path = "../models/llava-lora-qk-mm-crossqv-r32-PA"
     #lora_adapter_path  = "../models/llava-lora-nf4-4h-mm-sharedW-r32-a32-PA-WeightedLoss"
-    dataset_csv_path   = "../data/data_pa.csv"
+    dataset_csv_path   = "../data/data_1k.csv"
 
     device = (
         torch.device("cuda")
