@@ -104,17 +104,42 @@ class MIMICDataset(Dataset):
     """
     Dataset for MIMIC data with image paths, report text, and structured data
     """
-    def __init__(self, dataset_csv, transform=None, preload_reports=False):
+    def __init__(self, dataset_csv, transform=None, preload_reports=False, allowed_resolutions=None):
         """
         Args:
             dataset_csv (str): Path to the CSV file with image_path, report_path, and structured data
             transform (callable, optional): Optional transform to be applied on an image
-            processor (MIMIC_CXR_Processor): Processor for parsing reports
+            allowed_resolutions (list, optional): List of allowed resolutions as tuples [(width, height), ...]
         """
         logging.info(f"Loading dataset table from {dataset_csv}")
         self.dataset_table = pd.read_csv(dataset_csv)
         self.transform = transform
         self.processor = MIMIC_CXR_Processor()
+        self.preload_reports = preload_reports
+        self.allowed_resolutions = allowed_resolutions
+
+        # Filter by resolution if specified
+        if self.allowed_resolutions:
+            initial_count = len(self.dataset_table)
+            valid_indices = []
+            
+            for idx, row in self.dataset_table.iterrows():
+                try:
+                    with Image.open(row['image_path']) as img:
+                        width, height = img.size
+                        # Apply resize factor to get final resolution
+                        resize_factor = 4
+                        final_width = width // resize_factor
+                        final_height = height // resize_factor
+                        
+                        if (final_width, final_height) in self.allowed_resolutions:
+                            valid_indices.append(idx)
+                except Exception as e:
+                    logging.warning(f"Could not check resolution for {row['image_path']}: {e}")
+            
+            self.dataset_table = self.dataset_table.loc[valid_indices].reset_index(drop=True)
+            filtered_count = len(self.dataset_table)
+            logging.info(f"Resolution filtering: kept {filtered_count}/{initial_count} samples")
 
         # Filter out entries with empty reports after cleaning
         initial_count = len(self.dataset_table)

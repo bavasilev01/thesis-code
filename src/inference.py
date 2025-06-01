@@ -3,6 +3,9 @@ from PIL import Image
 from transformers import AutoProcessor, LlavaOnevisionForConditionalGeneration
 from peft import PeftModel
 import argparse
+import pandas as pd
+import os
+import numpy as np
 
 from mimic_dataset import MIMICDataset
 from prompt import prompt_mimic, prompt_mimic_impression  # the exact same prompt string you used at training time
@@ -10,8 +13,7 @@ from prompt import prompt_mimic, prompt_mimic_impression  # the exact same promp
 def run_inference(num_examples: int = 10):
     # ─── 1) Config & device ──────────────────────────────────────────────────
     base_model_path    = "../models/llava-onevision-qwen2-7b-ov-hf"
-    lora_adapter_path = "../models/llava-lora-qk-mm-crossqv-r32-PA"
-    #lora_adapter_path  = "../models/llava-lora-nf4-4h-mm-sharedW-r32-a32-PA-WeightedLoss"
+    lora_adapter_path = "../models/llava-lora-output/checkpoint-1466"
     dataset_csv_path   = "../data/data_1k.csv"
 
     device = (
@@ -45,7 +47,13 @@ def run_inference(num_examples: int = 10):
     print(f"Loaded MIMIC dataset with {n_avail} samples.")
     n = min(num_examples, n_avail)
 
-    # ─── 4) Inference loop ──────────────────────────────────────────────────
+    # ─── 4) Prepare results storage ──────────────────────────────────────────
+    results = []
+    
+    # Create results directory if it doesn't exist
+    os.makedirs("../results", exist_ok=True)
+
+    # ─── 5) Inference loop ──────────────────────────────────────────────────
     print(f"\nRunning inference on {n} examples…")
     for i in range(n):
         print(f"\n=== Example {i+1}/{n} ===")
@@ -95,7 +103,7 @@ def run_inference(num_examples: int = 10):
         # decode full sequence
         full_output = processor.decode(output_ids[0], skip_special_tokens=True).strip()
 
-        # extract just the assistant’s reply (after the "assistant" marker)
+        # extract just the assistant's reply (after the "assistant" marker)
         marker = "assistant"
         if (marker in full_output):
             predicted = full_output.split(marker, 1)[1].strip()
@@ -108,6 +116,43 @@ def run_inference(num_examples: int = 10):
         print("\n— Predicted Report —")
         print(predicted)
         print("="*40)
+
+        # ─── 6) Store results ───────────────────────────────────────────────
+        result_entry = {
+            'sample_id': i,
+            'ground_truth_report': true_report,
+            'predicted_report': predicted,
+            'structured_text': struct_text,
+            'true_chexpert': chexpert_labels.tolist() if isinstance(chexpert_labels, np.ndarray) else chexpert_labels,
+            'prompt_used': prompt_mimic,
+            'full_model_output': full_output
+        }
+        
+        results.append(result_entry)
+
+    # ─── 7) Save results to CSV ──────────────────────────────────────────────
+    results_df = pd.DataFrame(results)
+    
+    # Save with timestamp for uniqueness
+    from datetime import datetime
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = f"../results/inference_results_{timestamp}.csv"
+    
+    results_df.to_csv(output_path, index=False)
+    print(f"\nResults saved to: {output_path}")
+    
+    # Also save as the standard filename for evaluation
+    standard_path = "../results/inference_results.csv"
+    results_df.to_csv(standard_path, index=False)
+    print(f"Results also saved to: {standard_path}")
+    
+    # Print summary statistics
+    print(f"\nInference Summary:")
+    print(f"Total samples processed: {len(results)}")
+    print(f"Average predicted report length: {np.mean([len(r['predicted_report']) for r in results]):.1f} characters")
+    print(f"Average ground truth report length: {np.mean([len(r['ground_truth_report']) for r in results]):.1f} characters")
+    
+    return results_df
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
