@@ -1,23 +1,38 @@
-import torch
 import pandas as pd
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, roc_auc_score
-from transformers import AutoProcessor
 import nltk
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from rouge_score import rouge_scorer
 import re
 from collections import defaultdict
 import os
+from radgraph import RadGraph, F1RadGraph
 
-# Download required NLTK data
-nltk.download('punkt')
-nltk.download('punkt_tab')
+# Download required NLTK data if not already present
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('tokenizers/punkt_tab')
+except LookupError:
+    nltk.download('punkt_tab')
 
 class ReportEvaluator:
     def __init__(self):
         self.rouge_scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
         self.smoothie = SmoothingFunction().method4
+        # Initialize RadGraph
+        try:
+            self.radgraph = RadGraph()
+            self.f1_radgraph = F1RadGraph(reward_level="all")
+            self.radgraph_available = True
+            print("RadGraph & F1RadGraph initialized successfully")
+        except Exception as e:
+            print(f"Warning: Could not initialize RadGraph/F1RadGraph: {e}")
+            self.radgraph_available = False
         
     def evaluate_reports(self, predictions, references, chexpert_pred=None, chexpert_true=None):
         """
@@ -34,8 +49,9 @@ class ReportEvaluator:
         # Text-based metrics
         results.update(self._evaluate_text_metrics(predictions, references))
         
-        # Medical concept extraction and evaluation
-        results.update(self._evaluate_medical_concepts(predictions, references))
+        # RadGraph evaluation if available
+        if self.radgraph_available:
+            results.update(self.evaluate_radgraph(predictions, references))
         
         # CheXpert label evaluation if provided
         if chexpert_pred is not None and chexpert_true is not None:
@@ -74,55 +90,57 @@ class ReportEvaluator:
             results[f"{metric}_std"] = np.std(scores)
             
         return results
-    
-    def _evaluate_medical_concepts(self, predictions, references):
-        """Evaluate medical concept extraction accuracy"""
-        # Define medical terms to look for
-        medical_terms = [
-            'pneumonia', 'atelectasis', 'consolidation', 'edema', 'effusion',
-            'cardiomegaly', 'pneumothorax', 'nodule', 'mass', 'opacity',
-            'infiltrate', 'normal', 'clear', 'lungs', 'heart', 'mediastinum'
-        ]
-        
-        concept_precision = []
-        concept_recall = []
-        concept_f1 = []
-        
-        for pred, ref in zip(predictions, references):
-            pred_concepts = self._extract_concepts(pred.lower(), medical_terms)
-            ref_concepts = self._extract_concepts(ref.lower(), medical_terms)
+
+    def evaluate_radgraph(self, predictions, references):
+        """Evaluate using RadGraph if available"""
+        mean_reward, reward_list, hypothesis_annotation_lists, reference_annotation_lists = \
+            self.f1_radgraph(hyps=predictions, refs=references)
             
-            if len(ref_concepts) == 0:
-                continue
-                
-            tp = len(pred_concepts & ref_concepts)
-            fp = len(pred_concepts - ref_concepts)
-            fn = len(ref_concepts - pred_concepts)
-            
-            precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-            recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-            f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
-            
-            concept_precision.append(precision)
-            concept_recall.append(recall)
-            concept_f1.append(f1)
-        
-        return {
-            'concept_precision_mean': np.mean(concept_precision),
-            'concept_recall_mean': np.mean(concept_recall),
-            'concept_f1_mean': np.mean(concept_f1),
-            'concept_precision_std': np.std(concept_precision),
-            'concept_recall_std': np.std(concept_recall),
-            'concept_f1_std': np.std(concept_f1)
-        }
-    
-    def _extract_concepts(self, text, terms):
-        """Extract medical concepts from text"""
-        found_terms = set()
-        for term in terms:
-            if term in text:
-                found_terms.add(term)
-        return found_terms
+        # Unpack the three axes of reward
+        simple_list, partial_list, complete_list = reward_list
+        mean_simple, mean_partial, mean_complete = mean_reward
+
+        rad_results = {}
+
+        # Base F1 stats
+        rad_results.update({
+            'radgraph_simple_mean':   float(mean_simple),
+            'radgraph_simple_std':    float(np.std(simple_list)),
+            'radgraph_partial_mean':  float(mean_partial),
+            'radgraph_partial_std':   float(np.std(partial_list)),
+            'radgraph_complete_mean': float(mean_complete),
+            'radgraph_complete_std':  float(np.std(complete_list)),
+        })
+
+        # --- extra: use the annotation lists for entity/relation counts ---
+        ent_precisions, ent_recalls = [], []
+        hyp_counts, ref_counts = [], []
+
+        for hyp_ann, ref_ann in zip(hypothesis_annotation_lists, reference_annotation_lists):
+            # Each ann list is a list of dicts; pull out triples
+            hyp_triples = {(e[0], e[1], e[2]) for e in hyp_ann}
+            ref_triples = {(e[0], e[1], e[2]) for e in ref_ann}
+
+            tp = len(hyp_triples & ref_triples)
+            p = tp / len(hyp_triples) if hyp_triples else 0.0
+            r = tp / len(ref_triples) if ref_triples else 0.0
+
+            ent_precisions.append(p)
+            ent_recalls.append(r)
+            hyp_counts.append(len(hyp_triples))
+            ref_counts.append(len(ref_triples))
+
+        # summarize
+        rad_results.update({
+            'radgraph_entity_precision_mean': np.mean(ent_precisions),
+            'radgraph_entity_precision_std':  np.std(ent_precisions),
+            'radgraph_entity_recall_mean':    np.mean(ent_recalls),
+            'radgraph_entity_recall_std':     np.std(ent_recalls),
+            'radgraph_avg_hyp_entities':      np.mean(hyp_counts),
+            'radgraph_avg_ref_entities':      np.mean(ref_counts),
+        })
+
+        return rad_results
     
     def _evaluate_chexpert_labels(self, pred_labels, true_labels):
         """Evaluate CheXpert label predictions"""
@@ -169,10 +187,8 @@ def run_comprehensive_evaluation(results_df=None, csv_path=None):
     if results_df is not None:
         print("Using provided DataFrame for evaluation")
     else:
-        # Try to load from provided path or default location
         if csv_path is None:
             csv_path = "../results/inference_results.csv"
-        
         try:
             results_df = pd.read_csv(csv_path)
             print(f"Loaded inference results from: {csv_path}")
@@ -180,82 +196,77 @@ def run_comprehensive_evaluation(results_df=None, csv_path=None):
             print(f"No inference results file found at {csv_path}. Please run inference first.")
             return None
     
-    # Extract data for evaluation
+    # Extract data
     predictions = results_df['predicted_report'].tolist()
-    references = results_df['ground_truth_report'].tolist()
+    references  = results_df['ground_truth_report'].tolist()
     
     # Handle CheXpert labels if available
     chexpert_pred = None
     chexpert_true = None
-    
     if 'true_chexpert' in results_df.columns:
-        # Convert string representation back to lists if needed
         chexpert_true = []
         for labels in results_df['true_chexpert']:
             if isinstance(labels, str):
                 try:
-                    # Handle string representation of lists
                     chexpert_true.append(eval(labels))
                 except:
-                    # If eval fails, assume it's already a proper format
                     chexpert_true.append(labels)
             else:
                 chexpert_true.append(labels)
     
-    # Initialize evaluator
     evaluator = ReportEvaluator()
-    
-    # Run evaluation
     print("Running comprehensive evaluation...")
-    results = evaluator.evaluate_reports(
-        predictions, references, chexpert_pred, chexpert_true
-    )
+    results = evaluator.evaluate_reports(predictions, references, chexpert_pred, chexpert_true)
     
     # Print results
     print("\n" + "="*60)
     print("EVALUATION RESULTS")
     print("="*60)
-    
     print(f"\nDataset Info:")
-    print(f"Number of samples: {len(predictions)}")
-    print(f"Average prediction length: {np.mean([len(p) for p in predictions]):.1f} characters")
-    print(f"Average reference length: {np.mean([len(r) for r in references]):.1f} characters")
+    print(f"  Number of samples:            {len(predictions)}")
+    print(f"  Avg. prediction length:       {np.mean([len(p) for p in predictions]):.1f} chars")
+    print(f"  Avg. reference length:        {np.mean([len(r) for r in references]):.1f} chars")
     
     print(f"\nText-based Metrics:")
-    print(f"BLEU Score: {results['bleu_mean']:.4f} ± {results['bleu_std']:.4f}")
-    print(f"ROUGE-1 F1: {results['rouge1_f1_mean']:.4f} ± {results['rouge1_f1_std']:.4f}")
-    print(f"ROUGE-2 F1: {results['rouge2_f1_mean']:.4f} ± {results['rouge2_f1_std']:.4f}")
-    print(f"ROUGE-L F1: {results['rougeL_f1_mean']:.4f} ± {results['rougeL_f1_std']:.4f}")
-    
-    print(f"\nMedical Concept Metrics:")
-    print(f"Concept Precision: {results['concept_precision_mean']:.4f} ± {results['concept_precision_std']:.4f}")
-    print(f"Concept Recall: {results['concept_recall_mean']:.4f} ± {results['concept_recall_std']:.4f}")
-    print(f"Concept F1: {results['concept_f1_mean']:.4f} ± {results['concept_f1_std']:.4f}")
+    print(f"  BLEU Score:                   {results['bleu_mean']:.4f} ± {results['bleu_std']:.4f}")
+    print(f"  ROUGE-1 F1:                   {results['rouge1_f1_mean']:.4f} ± {results['rouge1_f1_std']:.4f}")
+    print(f"  ROUGE-2 F1:                   {results['rouge2_f1_mean']:.4f} ± {results['rouge2_f1_std']:.4f}")
+    print(f"  ROUGE-L F1:                   {results['rougeL_f1_mean']:.4f} ± {results['rougeL_f1_std']:.4f}")
     
     if 'chexpert_exact_match' in results:
         print(f"\nCheXpert Label Metrics:")
-        print(f"Exact Match Accuracy: {results['chexpert_exact_match']:.4f}")
-        
-        # Print per-class results
+        print(f"  Exact Match Accuracy:         {results['chexpert_exact_match']:.4f}")
         chexpert_classes = [
             'no_finding', 'enlarged_cardiomediastinum', 'cardiomegaly',
             'lung_opacity', 'lung_lesion', 'edema', 'consolidation',
             'pneumonia', 'atelectasis', 'pneumothorax', 'pleural_effusion',
             'pleural_other', 'fracture', 'support_devices'
         ]
+        for cls in chexpert_classes:
+            key = f'chexpert_{cls}_f1'
+            if key in results:
+                print(f"  {cls.replace('_', ' ').title():<30} {results[key]:.4f}")
+    
+    # RadGraph F1 axes
+    if 'radgraph_simple_mean' in results:
+        print(f"\nRadGraph F1 Rewards (reward_level='all'):")
+        print(f"  Simple   F1:                  {results['radgraph_simple_mean']:.4f} ± {results['radgraph_simple_std']:.4f}")
+        print(f"  Partial  F1:                  {results['radgraph_partial_mean']:.4f} ± {results['radgraph_partial_std']:.4f}")
+        print(f"  Complete F1:                  {results['radgraph_complete_mean']:.4f} ± {results['radgraph_complete_std']:.4f}")
         
-        for class_name in chexpert_classes:
-            f1_key = f'chexpert_{class_name}_f1'
-            if f1_key in results:
-                print(f"{class_name.replace('_', ' ').title()} F1: {results[f1_key]:.4f}")
+        print(f"\nRadGraph Entity-level Stats:")
+        print(f"  Entity Precision:             {results['radgraph_entity_precision_mean']:.4f} ± {results['radgraph_entity_precision_std']:.4f}")
+        print(f"  Entity Recall:                {results['radgraph_entity_recall_mean']:.4f} ± {results['radgraph_entity_recall_std']:.4f}")
+        print(f"  Avg. # Predicted Entities:    {results['radgraph_avg_hyp_entities']:.1f}")
+        print(f"  Avg. # Reference Entities:    {results['radgraph_avg_ref_entities']:.1f}")
     
     # Save detailed results
     os.makedirs("../results", exist_ok=True)
-    eval_results_df = pd.DataFrame([results])
-    eval_results_df.to_csv("../results/evaluation_metrics.csv", index=False)
+    pd.DataFrame([results]).to_csv("../results/evaluation_metrics.csv", index=False)
     print(f"\nDetailed results saved to: ../results/evaluation_metrics.csv")
     
     return results
 
+
 if __name__ == "__main__":
-    run_comprehensive_evaluation()
+    run_comprehensive_evaluation(csv_path="../results/inference_results.csv")

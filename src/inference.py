@@ -1,5 +1,4 @@
 import torch
-from PIL import Image
 from transformers import AutoProcessor, LlavaOnevisionForConditionalGeneration
 from peft import PeftModel
 import argparse
@@ -8,7 +7,7 @@ import os
 import numpy as np
 
 from mimic_dataset import MIMICDataset
-from prompt import prompt_mimic, prompt_mimic_impression  # the exact same prompt string you used at training time
+from prompt import prompt_mimic
 
 def run_inference(num_examples: int = 10):
     # ─── 1) Config & device ──────────────────────────────────────────────────
@@ -132,14 +131,6 @@ def run_inference(num_examples: int = 10):
 
     # ─── 7) Save results to CSV ──────────────────────────────────────────────
     results_df = pd.DataFrame(results)
-    
-    # Save with timestamp for uniqueness
-    from datetime import datetime
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = f"../results/inference_results_{timestamp}.csv"
-    
-    results_df.to_csv(output_path, index=False)
-    print(f"\nResults saved to: {output_path}")
     
     # Also save as the standard filename for evaluation
     standard_path = "../results/inference_results.csv"
