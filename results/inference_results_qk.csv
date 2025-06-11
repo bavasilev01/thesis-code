@@ -1,0 +1,645 @@
+sample_id,ground_truth_report,predicted_report,structured_text,true_chexpert,prompt_used,full_model_output
+0,"Findings: The cardiac, mediastinal and hilar contours are normal. Pulmonary vasculature is normal. Lungs are clear. No pleural effusion or pneumothorax is present. Multiple clips are again seen projecting over the left breast. Remote left-sided rib fractures are also re- demonstrated.
+Impression: No acute cardiopulmonary abnormality.","Impression: Mild, leftward lung nodule on left is mildly decreased in size for comparison to prior dated Jan 23, 2012. Mild cardiomegaly. Small pleural effusion right. No pulmonary consolidations, pneumothorax, or edema.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Impression: Mild, leftward lung nodule on left is mildly decreased in size for comparison to prior dated Jan 23, 2012. Mild cardiomegaly. Small pleural effusion right. No pulmonary consolidations, pneumothorax, or edema."
+1,"Findings: Heart size is normal. Mediastinal contours are normal with mild aortic tortuosity. Post-surgical changes in the right hemithorax are stable including thickening of the pleura along the costal surface and blunting of the costophrenic sulcus. The right sixth rib surgical fracture is redemonstrated. There are no new lung nodules identified.
+Impression: Stable chest radiograph.","Findings: A prior right posterolateral mediastinal and anterior mediastinal mass is no more present with mediastinal mass in the left anterior mediastin from C-T to A, measuring 1.8 cm by 1.4 cm. There is no evidence of fluid collection. Cardiomediastinal silhouettes, aorta, and pulmonae appear unremarkable except for mild costophrenic effusion and small cardiac silhouette with no evidence of significant pulmonary edema. The right hemidiaphragm has a 21 mm pleural effusion.
+Impression: Prior mediastinal mass is no more present. No evidence of pleural effusion within the right hemidiaphragm.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: A prior right posterolateral mediastinal and anterior mediastinal mass is no more present with mediastinal mass in the left anterior mediastin from C-T to A, measuring 1.8 cm by 1.4 cm. There is no evidence of fluid collection. Cardiomediastinal silhouettes, aorta, and pulmonae appear unremarkable except for mild costophrenic effusion and small cardiac silhouette with no evidence of significant pulmonary edema. The right hemidiaphragm has a 21 mm pleural effusion.
+Impression: Prior mediastinal mass is no more present. No evidence of pleural effusion within the right hemidiaphragm."
+2,"Findings: The heart is normal in size. The mediastinal and hilar contours appear within normal limits. Each hilum is mildly prominent, probably suggesting mild prominence of central pulmonary vessels, but there is no frank congestive heart failure. No focal opacification is seen aside from streaky left lower lung opacity suggesting minor atelectasis. There is no pleural effusion or pneumothorax. Bony structures are unremarkable.
+Impression: Mild perihilar prominence, suspected to represent mildly prominent pulmonary vessels without definite pneumonia. Streaky left basilar opacification seen only on the frontal view is probably due to minor atelectasis or scarring.","Findings: The client appears to be in mid inspiration. There is no focal pulmonary consolidation. No pleural effusion or pneumothorax. Cardiac and mediastinal silhouettes are unremarkable. Bony structures are well visualized.
+Impression: No acute cardiopulmonary abnormality.",Evidence of: lung opacity. No evidence of pneumonia. Uncertain regarding atelectasis.,"tensor([-1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1.,  0., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The client appears to be in mid inspiration. There is no focal pulmonary consolidation. No pleural effusion or pneumothorax. Cardiac and mediastinal silhouettes are unremarkable. Bony structures are well visualized.
+Impression: No acute cardiopulmonary abnormality."
+3,"Findings: The lungs are hyperinflated but clear without consolidation. Biapical scarring is again noted, worse on the right. Cardiomediastinal silhouette is within normal limits. No acute osseous abnormalities.
+Impression: No acute cardiopulmonary process.","Findings: Minimal cardiomegaly is again noted. Mild diaphragmatic convexity elevation is present with no acute pleural effusions, focal consolidations or pneumothoraxes. No displaced fracture is identifed.
+Impression: No acute intrathoracic abnormalities. Note the elevation of the diaphragms.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Minimal cardiomegaly is again noted. Mild diaphragmatic convexity elevation is present with no acute pleural effusions, focal consolidations or pneumothoraxes. No displaced fracture is identifed.
+Impression: No acute intrathoracic abnormalities. Note the elevation of the diaphragms."
+4,"Findings: Mild basilar atelectasis is seen without focal consolidation. No pleural effusion or pneumothorax is seen. The cardiac and mediastinal silhouettes are stable.
+Impression: Mild basilar atelectasis without definite focal consolidation.","Findings: The heart is slightly enlarged and theCardiac and mediastinal silhouettes are mildly enlarged. The pulmonary vascular outlines are normal with no pulmonary edema. There is no pleural effusion or pneumothorax. Mild chronic pulmonary nodules are seen in both bases.
+Impression: Mild chronic pulmonary nodules. Prior chronic cardiopulmonary conditions are also well documented.",Evidence of: atelectasis. No evidence of consolidation.,"tensor([ 1., -1.,  0., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The heart is slightly enlarged and theCardiac and mediastinal silhouettes are mildly enlarged. The pulmonary vascular outlines are normal with no pulmonary edema. There is no pleural effusion or pneumothorax. Mild chronic pulmonary nodules are seen in both bases.
+Impression: Mild chronic pulmonary nodules. Prior chronic cardiopulmonary conditions are also well documented."
+5,"Impression: There is hyperinflation. There is no pneumothorax, effusion, consolidation or CHF. There is probable osteopenia.","Findings: Cardiomediastinal silhouette normal in size . Upper lobe convecting pneumonia with left subpleural consolidation. No focal rib deformity.
+Impression: Left lobar pneumonia . Follow-up CT within 3 days. If sicker as admission then initiate antibiotics.","No evidence of consolidation, edema, pleural effusion, pneumothorax.","tensor([-1., -1.,  0.,  0., -1., -1., -1., -1., -1.,  0., -1., -1.,  0., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Cardiomediastinal silhouette normal in size . Upper lobe convecting pneumonia with left subpleural consolidation. No focal rib deformity.
+Impression: Left lobar pneumonia . Follow-up CT within 3 days. If sicker as admission then initiate antibiotics."
+6,"Findings: The lungs are clear without consolidation, effusion or edema. Biapical scarring, worse on the right is again noted. The cardiomediastinal silhouette is within normal limits. No acute osseous abnormalities.
+Impression: No acute cardiopulmonary process.","Findings: The cardiomediastinal contours, diaphragmatic domes and lung bases appear stable. No focal consolidation, pleural effusion or pneumothorax. No frank cardiac enlargement.
+Impression: No pneumonia.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The cardiomediastinal contours, diaphragmatic domes and lung bases appear stable. No focal consolidation, pleural effusion or pneumothorax. No frank cardiac enlargement.
+Impression: No pneumonia."
+7,"Findings: Mild to moderate enlargement of the cardiac silhouette is unchanged. The aorta remains tortuous. Mediastinal and hilar contours are otherwise similar. The pulmonary vasculature is not engorged. Lungs are hyperinflated. Apart from minimal atelectasis in the lung bases and biapical scarring in the lung apices, more pronounced on the right, the lungs are clear.No pleural effusion or pneumothorax is demonstrated. There are no acute osseous abnormalities.
+Impression: No acute cardiopulmonary abnormality.","Findings: Heart size is small. Cardiomediastinal outline is normal. Lungs are clear. No consolidations, pleural effusions, or pneumothorax. Szenzis is intact and no displaced rib fractures noted. No osseous abnormalities.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Heart size is small. Cardiomediastinal outline is normal. Lungs are clear. No consolidations, pleural effusions, or pneumothorax. Szenzis is intact and no displaced rib fractures noted. No osseous abnormalities."
+8,"Findings: The lungs are clear without focal consolidation. No pleural effusion or pneumothorax is seen. The cardiac and mediastinal silhouettes are unremarkable. Again noted is a tortuous aorta.
+Impression: No evidence of pneumonia. No acute cardiopulmonary process.","Findings: Lungs are well expanded with normal clarity. Cardiac silhouette and aorta are sizey with right hilar prominence. There is not enough soft tissue detail to exclude acute atelec- sia or pleural effusion. Small 1. 2 cm indeterminate calcified nodule is seen within the right lower hilar region.
+Impression: Acute atelectasis was not excluded.",No evidence of pneumonia.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1.,  0., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Lungs are well expanded with normal clarity. Cardiac silhouette and aorta are sizey with right hilar prominence. There is not enough soft tissue detail to exclude acute atelec- sia or pleural effusion. Small 1. 2 cm indeterminate calcified nodule is seen within the right lower hilar region.
+Impression: Acute atelectasis was not excluded."
+9,"Findings: With exception of mild bibasilar atelectasis, the lungs are normally expanded without focal opacity to suggest pneumonia. Heart size is mildly enlarged. The mediastinal and hilar contours are unchanged. There is no pleural effusion or pneumothorax. The aorta is unfolded and tortuous.
+Impression: Mild bibasilar atelectasis. No evidence of pneumonia.","Findings: Heart size, cardiac, mediastinal and hilar contours are normal. Mild, haphazard and indistinct hilar contour is normal, which is likely caused by lung opacity arising from bronchial tortuosity. Lungs appear clear without evidence of pneumonia. Right hilar opacity may indicate pneumonia, atelectasis or esophagopharyngeal fibrosis. No significant costophrenic angle blunting. Normal hilar contour is caused by abnormal bronchi. The right mediastinal contour may reflect fibrosed esophagopharyngeal junction, which is otherwise of normal appearance.
+Impression: Hilar contour is normal. Right hilar opacity may indicate esophagopharyngeal fibrosis, pneumonia, or atelectasis. No focal consolidation or pleural effusion noted.",Evidence of: atelectasis. No evidence of pneumonia.,"tensor([ 1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1.,  0., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Heart size, cardiac, mediastinal and hilar contours are normal. Mild, haphazard and indistinct hilar contour is normal, which is likely caused by lung opacity arising from bronchial tortuosity. Lungs appear clear without evidence of pneumonia. Right hilar opacity may indicate pneumonia, atelectasis or esophagopharyngeal fibrosis. No significant costophrenic angle blunting. Normal hilar contour is caused by abnormal bronchi. The right mediastinal contour may reflect fibrosed esophagopharyngeal junction, which is otherwise of normal appearance.
+Impression: Hilar contour is normal. Right hilar opacity may indicate esophagopharyngeal fibrosis, pneumonia, or atelectasis. No focal consolidation or pleural effusion noted."
+10,"Findings: Again seen is biapical scarring. The lungs are otherwise clear without focal consolidation, effusion, or edema. Cardiomediastinal silhouette is stable. No acute osseous abnormalities.
+Impression: No acute cardiopulmonary process.","Findings: An enlarged cardiomegaly persists. Cardiac silhouette is mildly enlarged with a slightly dilated left atrium. Pulmonary vascularity and hilar structures are normal. No new focal consolidation is present. Hyponattone thickening is not visualized, though small areas of coarse haziness scattered across the anterio posteri lung fields suggest residual pulmonary edema. Slightly densified opacity of the right mid region might reflect previous tuberculosis. Not related to pulmonary findings.
+Impression: No pneumonia",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: An enlarged cardiomegaly persists. Cardiac silhouette is mildly enlarged with a slightly dilated left atrium. Pulmonary vascularity and hilar structures are normal. No new focal consolidation is present. Hyponattone thickening is not visualized, though small areas of coarse haziness scattered across the anterio posteri lung fields suggest residual pulmonary edema. Slightly densified opacity of the right mid region might reflect previous tuberculosis. Not related to pulmonary findings.
+Impression: No pneumonia"
+11,"Findings: The cardiomediastinal and hilar contours are normal. The lungs are clear. There is no pleural effusion or pneumothorax.
+Impression: No acute cardiopulmonary process.",Impression : No acute cardiopulmonary abnormality.,No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Impression : No acute cardiopulmonary abnormality."
+12,"Findings: The cardiac silhouette is normal in size. The hilar and mediastinal contours are stable. There is mild bibasilar atelectasis. There is no focal consolidation, pleural effusion or pneumothorax.
+Impression: No acute cardiopulmonary process.","Findings: No evidence of pneumothorax. Mediastinal outline is mildly prominent and left hilar prominence may be focal, as likely, mediastinal hypertension. Cardiazma is mildly expanded with hypertrophy of the left apex in the patient, newly status post cardiac valve replacement. Acremolytic bones of both the arms. No pneumopathology. No displaced fracture of the ribs.
+Impression: Left hilar prominence and cardiomegaly on all sizes are probably mediastinal hypertension which we have no further change. Presence of cardiac hardware.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: No evidence of pneumothorax. Mediastinal outline is mildly prominent and left hilar prominence may be focal, as likely, mediastinal hypertension. Cardiazma is mildly expanded with hypertrophy of the left apex in the patient, newly status post cardiac valve replacement. Acremolytic bones of both the arms. No pneumopathology. No displaced fracture of the ribs.
+Impression: Left hilar prominence and cardiomegaly on all sizes are probably mediastinal hypertension which we have no further change. Presence of cardiac hardware."
+13,"Impression: Bibasilar atelectasis. Otherwise, no acute intrathoracic process.","Impression: Normal cardiomediastinal contours. No rib contour abnormality. No significant focal consolidation, pleural effusion, or pneumothorax.",Evidence of: atelectasis.,"tensor([ 1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Impression: Normal cardiomediastinal contours. No rib contour abnormality. No significant focal consolidation, pleural effusion, or pneumothorax."
+14,"Findings: The lungs are hyperinflated but clear without confluent consolidation or effusion. The cardiomediastinal silhouette is within normal limits. No acute osseous abnormalities identified.
+Impression: No acute cardiopulmonary process.",Findings: Cardiac and mediastinal silhouettes are normal in size. The hilar and hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar,No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Cardiac and mediastinal silhouettes are normal in size. The hilar and hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar hilar"
+15,"Findings: The lungs are clear without focal consolidation. No pleural effusion or pneumothorax is seen. The cardiac and mediastinal silhouettes are unremarkable. No evidence of pneumomediastinum is seen. There is no evidence of free air beneath the diaphragms.
+Impression: No acute cardiopulmonary process.","Findings: Cardiac, mediastinal and hilar contours are within normal limits. Lungs are clear. No acute radiographic abnormality is identified. Impressions: No acute radiographic abnormality.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Cardiac, mediastinal and hilar contours are within normal limits. Lungs are clear. No acute radiographic abnormality is identified. Impressions: No acute radiographic abnormality."
+16,"Findings: The lungs are clear without focal consolidation,, or edema. The cardiomediastinal silhouette is within normal limits. No acute osseous abnormalities.
+Impression: No acute cardiopulmonary process.","Findings: Lung field clarity is diminished and consistent with the clinical setting. There is no pleural effusion, lung consolidation, focal pulmonary edema, active sepsis, or pneumothorax. Cardiac size appears stable.
+Impression: No acute cardiopulmonary process.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Lung field clarity is diminished and consistent with the clinical setting. There is no pleural effusion, lung consolidation, focal pulmonary edema, active sepsis, or pneumothorax. Cardiac size appears stable.
+Impression: No acute cardiopulmonary process."
+17,"Findings: The heart is normal in size. The mediastinal and hilar contours appear unchanged. The lungs are hyperinflated. There is no evidence for pleural effusion or pneumothorax. The lungs appear clear. Mildly exaggerated kyphotic curvature and suspected demineralization are noted.
+Impression: Hyperinflation. No evidence of acute disease.","Findings: The patient is in supine position. There is mild bibasilar atelectasis which may relate to patient's low-grade pneumonia in the middle lung apex. Otherwise, there is no evidence of mass, pneumothorax, or meniscus sign. The heart size is normal.
+Impression: Mild, bibasilar atelectasis that may relate to midzone right pneumonia. Consider low-risk chest CT to help complete the workup for the patient's pneumonia. If follow-up imaging is deemed necessary, prior left AP chest X-ray should be projected on right side if re-ordered.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The patient is in supine position. There is mild bibasilar atelectasis which may relate to patient's low-grade pneumonia in the middle lung apex. Otherwise, there is no evidence of mass, pneumothorax, or meniscus sign. The heart size is normal.
+Impression: Mild, bibasilar atelectasis that may relate to midzone right pneumonia. Consider low-risk chest CT to help complete the workup for the patient's pneumonia. If follow-up imaging is deemed necessary, prior left AP chest X-ray should be projected on right side if re-ordered."
+18,"Findings: The heart is mildly enlarged with a left ventricular configuration. There is mild unfolding of the thoracic aorta. The cardiac, mediastinal and hilar contours appear stable. There is a small eventration of the right hemidiaphragm. The lungs appear clear. Mild degenerative changes are similar along the visualized thoracic spine. Right breast is absent.
+Impression: No evidence of acute cardiopulmonary disease.","Findings: The cardiac, mediastinal and hilar contours appear stable. The aorta is tortuous and the thoracic spine is somewhat prominent. No focal consolidations or pleural effusions are demonstrated. The lungs appear clear.
+Impression: Asymptomatic right pleural effusion. No acute cardiopulmonary process.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The cardiac, mediastinal and hilar contours appear stable. The aorta is tortuous and the thoracic spine is somewhat prominent. No focal consolidations or pleural effusions are demonstrated. The lungs appear clear.
+Impression: Asymptomatic right pleural effusion. No acute cardiopulmonary process."
+19,"Findings: Allowing for differences in technique and projection, there has been little interval change in the appearance of the chest since the previous radiograph, with no new focal areas of consolidation to suggest the presence of pneumonia. Multifocal linear areas of scarring appear unchanged, previously attributed to sarcoidosis. Band-like opacity at periphery of left lung base has slightly worsened and is attributed to localize atelectasis.","Findings: 3 pulmonary vascular catheters are seen within the catheter zones. Lungs are relatively clear, although small atelectasis is seen particularly at the left basilar lung field of the right side. The cardiac and mediastinal silhouettes, the a hilar contour and the hilar margin are unremarkable. No pleural effusion or pneumothorax is seen. Medial mediastinum appears stable; no air-fluid levels are seen from the head to the pelvis.
+Impression: 1. 3 pulmonary vascular catheters within the catheter zones. 2. Small atelectasis at the left basilar lung field of the right side, although this needs repeat lung film since atelectasis is not typical during inter Thoracic procedure.","Evidence of: atelectasis, lung opacity, pneumonia. Uncertain regarding consolidation.","tensor([ 1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1.,  1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: 3 pulmonary vascular catheters are seen within the catheter zones. Lungs are relatively clear, although small atelectasis is seen particularly at the left basilar lung field of the right side. The cardiac and mediastinal silhouettes, the a hilar contour and the hilar margin are unremarkable. No pleural effusion or pneumothorax is seen. Medial mediastinum appears stable; no air-fluid levels are seen from the head to the pelvis.
+Impression: 1. 3 pulmonary vascular catheters within the catheter zones. 2. Small atelectasis at the left basilar lung field of the right side, although this needs repeat lung film since atelectasis is not typical during inter Thoracic procedure."
+20,"Findings: The lungs are clear without focal consolidation. No pleural effusion or pneumothorax is seen. The cardiac and mediastinal silhouettes are unremarkable. Partially imaged hardware in the lumbar spine.
+Impression: No acute cardiopulmonary process.","Findings: Mediastinum unchanged. Heart size normal. Cardiomediastinal silhouette is within normal limits. Large aortic arch calcifications in upper abdomen. Lung volumes compressed with slight attenuation in the left lower lung base in the absence of fluid or air-fluid collection. Mild atelectasis of the right bascopic region suggests the superimposed effect of positioning. Mild haziness along the alveolar margins is less pronounced than previous reporting. No pleural effusion or pneumothorax.
+Impression: Similar to prior imaging, findings best interpreted with imaging performed over the right in the absence of pleural effusion, although some focal haziness in the right lower lobe as seen to be not well aligned with the proper imaging site.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Mediastinum unchanged. Heart size normal. Cardiomediastinal silhouette is within normal limits. Large aortic arch calcifications in upper abdomen. Lung volumes compressed with slight attenuation in the left lower lung base in the absence of fluid or air-fluid collection. Mild atelectasis of the right bascopic region suggests the superimposed effect of positioning. Mild haziness along the alveolar margins is less pronounced than previous reporting. No pleural effusion or pneumothorax.
+Impression: Similar to prior imaging, findings best interpreted with imaging performed over the right in the absence of pleural effusion, although some focal haziness in the right lower lobe as seen to be not well aligned with the proper imaging site."
+21,"Findings: Scoliosis of the thoracic spine and consequent asymmetry in the rib spaces. The compression fracture in the thoracic vertebral body is stable. Normal size of the cardiac silhouette. Normal hilar and mediastinal structures. , no pulmonary edema. No pleural effusions. No pneumonia
+Impression: Chronic scoliosis and stable compression fracture of a thoracic vertebra. Otherwise normal chest radiograph. No evidence pneumonia.","Findings: The cardiomediastinal axis is vertically aligned. Hilar anatomy includes multiple small nodular opacities consistent with lymph nodes. Minor elevation of the left hemidiaphragm is unchanged. No free air. No pleural effusion or atelectasis. The right lung shows evidence of traction bronbronchiectasis which is superposed upon small nodular opacities that is likely atelectasis in the lower lobe. There is likely traction bronbronchiectasis of the right lung base. These findings may represent previous pathology, including pneumonia with resultant fibrosis.
+Impression: Right low lobe likely traction bronbronchiectasis with some subtle opacities representing atelectasis.",Evidence of: fracture. No evidence of pneumonia.,"tensor([-1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.,  0., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The cardiomediastinal axis is vertically aligned. Hilar anatomy includes multiple small nodular opacities consistent with lymph nodes. Minor elevation of the left hemidiaphragm is unchanged. No free air. No pleural effusion or atelectasis. The right lung shows evidence of traction bronbronchiectasis which is superposed upon small nodular opacities that is likely atelectasis in the lower lobe. There is likely traction bronbronchiectasis of the right lung base. These findings may represent previous pathology, including pneumonia with resultant fibrosis.
+Impression: Right low lobe likely traction bronbronchiectasis with some subtle opacities representing atelectasis."
+22,Findings: The lung volumes are normal. No pleural effusions. No parenchymal abnormalities. Normal size of the cardiac silhouette.,"Findings: Heart size, cardiac and mediastinal contours, and the lungs appear mildly hypoinflated. Bilateral hilar and subpleural opacities appear stable, but mildly worsened in comparison with 3 months prior. The hilar level left mediastinal mass appears unchanged. Otherwise, the lungs appear clear except for scattered, nodular pleural opacities and mild opacity from the prior surgical device not being observed. No free air in the chest.
+Impression: Stable changes, no free air.","No evidence of cardiomegaly, pleural effusion.","tensor([-1.,  0., -1., -1., -1., -1., -1., -1.,  1.,  0., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Heart size, cardiac and mediastinal contours, and the lungs appear mildly hypoinflated. Bilateral hilar and subpleural opacities appear stable, but mildly worsened in comparison with 3 months prior. The hilar level left mediastinal mass appears unchanged. Otherwise, the lungs appear clear except for scattered, nodular pleural opacities and mild opacity from the prior surgical device not being observed. No free air in the chest.
+Impression: Stable changes, no free air."
+23,"Findings: Heart size is normal. The mediastinal and hilar contours are normal. The pulmonary vasculature is normal. Lungs are clear. No pleural effusion or pneumothorax is seen. There are no acute osseous abnormalities.
+Impression: No acute cardiopulmonary abnormality.","Findings: The heart size is mildly enlarged measuring moderately hypoluscoid with left ventricular hypertrophy. The mediastinal contours are unremarkable. The main lung vessels are minimally haustra and have focal opacities, most likely at the hilar regions. There are minimal focal lower lobe basocervical consolidations which could be related to prior resolution of infection or active processes. There are no hydro气retention. L pneumothorax is excluded. Current small but stable focal changes noted lower right with minor left pleural effusions are also more easily demonstrated.
+Impression: Minuscule new changes mostly lower right. No evidence of major lung disease or cardiomegaly present here; further observation would be indicated if there are new clinical concerns; this CT may provide additional detail by its smaller size with an 8.5 mm thin slice, allowing for delineation of specific regions, where abnormalities will be detected.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The heart size is mildly enlarged measuring moderately hypoluscoid with left ventricular hypertrophy. The mediastinal contours are unremarkable. The main lung vessels are minimally haustra and have focal opacities, most likely at the hilar regions. There are minimal focal lower lobe basocervical consolidations which could be related to prior resolution of infection or active processes. There are no hydro气retention. L pneumothorax is excluded. Current small but stable focal changes noted lower right with minor left pleural effusions are also more easily demonstrated.
+Impression: Minuscule new changes mostly lower right. No evidence of major lung disease or cardiomegaly present here; further observation would be indicated if there are new clinical concerns; this CT may provide additional detail by its smaller size with an 8.5 mm thin slice, allowing for delineation of specific regions, where abnormalities will be detected."
+24,"Findings: Compared with the prior study, a right-sided pleural effusion, with right basilar atelectasis is new. However, pulmonary edema has improved. The prior retrocardiac consolidation has also resolved, suggesting clearing of a mucous plug. Mild cardiomegaly is unchanged. No pneumothorax. Interval removal of the NG tube.
+Impression: Improved pulmonary edema, with improvement of a prior retrocardiac consolidation, suggesting clearing of a prior mucous plug.","Findings: Two lung volumes are low, as described above. Heart size is enlarged, normal lower lung contouring noted. No focal consolidation or aortic tortuosity. No effusion is noted. Presence of scattered interstitial opacities is consistent with mild interstitial pulmonary disease.
+Impression: Mild bi - lobar pulmonary hy- pantonia. Small increase, no worsening in left pleural effusion. No acute underlying lung disease noted as well- documented mild pulmonary hypertension is stable.","Evidence of: consolidation, edema.","tensor([-1., -1.,  1.,  1., -1., -1., -1., -1., -1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Two lung volumes are low, as described above. Heart size is enlarged, normal lower lung contouring noted. No focal consolidation or aortic tortuosity. No effusion is noted. Presence of scattered interstitial opacities is consistent with mild interstitial pulmonary disease.
+Impression: Mild bi - lobar pulmonary hy- pantonia. Small increase, no worsening in left pleural effusion. No acute underlying lung disease noted as well- documented mild pulmonary hypertension is stable."
+25,"Findings: Left-sided Port-A-Cath tip terminates in the low SVC. Heart size is mildly enlarged, but decreased in size compared to the previous exam. The mediastinal and hilar contours are unchanged with tortuosity of thoracic aorta again noted. Also again noted is indentation upon the right aspect of the trachea at the thoracic inlet due to the presence of a large thyroid goiter, as seen on prior CT. The pulmonary vasculature is normal. The lungs are clear. No pleural effusion or pneumothorax is seen. There are no acute osseous abnormalities. A common bile duct stent is incompletely assessed.
+Impression: No acute cardiopulmonary abnormality including no evidence for pneumonia.","Findings: The cardiac, mediastinal and hilar contours are similar to the prior exam. There is no focal consolidation, pneumothorax or pneumoperitoneum.
+Impression: No acute cardiopulmonary process. Similar to past imaging, I do worry about the lack of definition to small rounded radiolucency to the mid right side of the thoracic cavity which may represent old atelectasis or prior consolidation, potentially indicative of possible pleural thickening above.",No evidence of pneumonia.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1.,  0., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The cardiac, mediastinal and hilar contours are similar to the prior exam. There is no focal consolidation, pneumothorax or pneumoperitoneum.
+Impression: No acute cardiopulmonary process. Similar to past imaging, I do worry about the lack of definition to small rounded radiolucency to the mid right side of the thoracic cavity which may represent old atelectasis or prior consolidation, potentially indicative of possible pleural thickening above."
+26,"Findings: The lungs are clear without focal consolidation. No pleural effusion or pneumothorax is seen. The cardiac and mediastinal silhouettes are unremarkable. Aorta is calcified and tortuous. No overt pulmonary edema is seen.
+Impression: No acute cardiopulmonary process.","Findings: Heart is normal in size. Mediastinal and hilar contours are normal. Lungs are clear. No free air detected. No significant lung volumes to assess.
+Impression: No acute intrathoracic process",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Heart is normal in size. Mediastinal and hilar contours are normal. Lungs are clear. No free air detected. No significant lung volumes to assess.
+Impression: No acute intrathoracic process"
+27,"Findings: Patient is status post median sternotomy and CABG. Heart size is borderline enlarged. Mediastinal and hilar contours are normal. Lungs are clear. Pulmonary vasculature is normal. No pleural effusion or pneumothorax is present. No acute osseous abnormalities detected.
+Impression: No acute cardiopulmonary abnormality.","Findings: The heart appears normal in size. Mediastinal and hilar contours are within normal limits. The aorta is non-dilated. Pulmonary vascularity appears dilated. Congenital rib notching of the upper outer third is observed, previously noted by the prior radiologists. No focal consolidation or evidence of pneumothorax is seen. There is no pleural effusion. The breasts are thick, possibly distal on the right rib.
+Impression: No focal consolidation or evidence of pneumothorax is seen. Consider low lung volume for the dilated pulmonary hilar contours as reported.
+Low lung volume is a result of radiographic technique. The lungs remain clear when the low lung volume in this is discounted.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: The heart appears normal in size. Mediastinal and hilar contours are within normal limits. The aorta is non-dilated. Pulmonary vascularity appears dilated. Congenital rib notching of the upper outer third is observed, previously noted by the prior radiologists. No focal consolidation or evidence of pneumothorax is seen. There is no pleural effusion. The breasts are thick, possibly distal on the right rib.
+Impression: No focal consolidation or evidence of pneumothorax is seen. Consider low lung volume for the dilated pulmonary hilar contours as reported.
+Low lung volume is a result of radiographic technique. The lungs remain clear when the low lung volume in this is discounted."
+28,"Findings: The previously seen small left pneumothorax has resolved. The left sixth and seventh rib fractures are stable. No consolidation. The hila and pulmonary vasculature are normal. No pleural effusions. The cardiomediastinal silhouette is normal.
+Impression: Resolution of pneumothorax. Unchanged left sixth and seventh rib fractures. No other acute cardiopulmonary process.",Impression: Right mediastinal effusion.,Evidence of: fracture. No evidence of pneumothorax.,"tensor([-1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1., -1.,  0., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Impression: Right mediastinal effusion."
+29,"Findings: A right-sided PICC terminates in the low SVC, unchanged from prior examination. An upper enteric tube passes through the stomach and into the duodenum out of view. Cardiomediastinal silhouette and hilar contours are unremarkable. Plate-like atelectasis in the right middle lobe and lingula is unchanged compared to prior examination. Pleural surfaces are clear without effusion or pneumothorax.
+Impression: No acute cardiopulmonary abnormality.","Findings: Heart size is normal. Cardiomediastinal and hilar contours are unremarkable. Pulmonary vascularity is normal. Lungs are clear without evidence of edema. No pneumothorax is seen. No acute osseous abnormalities detected.
+Impression: No acute cardiopulmonary abnormality.",No significant findings.,"tensor([-1., -1., -1., -1., -1., -1., -1., -1.,  1., -1., -1., -1., -1., -1.])","
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+","user 
+
+Analyze the provided chest X-ray and generate a valid radiology report in professional clinical language. The report must include two sections:
+
+Findings: A visual description of the anatomical structures and any abnormalities visible on the image. Use objective, medically appropriate terminology. Do not interpret beyond what is visible.
+
+Impression: A brief summary emphasizing clinically significant findings.
+
+Base the report solely on the image provided.
+assistant
+Findings: Heart size is normal. Cardiomediastinal and hilar contours are unremarkable. Pulmonary vascularity is normal. Lungs are clear without evidence of edema. No pneumothorax is seen. No acute osseous abnormalities detected.
+Impression: No acute cardiopulmonary abnormality."

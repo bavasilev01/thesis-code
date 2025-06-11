@@ -9,7 +9,7 @@ import numpy as np
 from mimic_dataset import MIMICDataset
 from prompt import prompt_mimic
 
-def run_inference(num_examples: int = 10):
+def run_inference(num_examples: int = 10, output_path: str = "../results/inference_results.csv"):
     # ─── 1) Config & device ──────────────────────────────────────────────────
     base_model_path    = "../models/llava-onevision-qwen2-7b-ov-hf"
     lora_adapter_path = "../models/llava-lora-output/checkpoint-1466"
@@ -133,10 +133,9 @@ def run_inference(num_examples: int = 10):
     results_df = pd.DataFrame(results)
     
     # Also save as the standard filename for evaluation
-    standard_path = "../results/inference_results.csv"
-    results_df.to_csv(standard_path, index=False)
-    print(f"Results also saved to: {standard_path}")
-    
+    results_df.to_csv(output_path, index=False)
+    print(f"Results also saved to: {output_path}")
+
     # Print summary statistics
     print(f"\nInference Summary:")
     print(f"Total samples processed: {len(results)}")
@@ -150,4 +149,4 @@ if __name__ == "__main__":
     parser.add_argument("--num_examples", type=int, default=10,
                         help="How many MIMIC samples to run inference on.")
     args = parser.parse_args()
-    run_inference(args.num_examples)
+    run_inference(args.num_examples, output_path="../results/inference_results.csv")

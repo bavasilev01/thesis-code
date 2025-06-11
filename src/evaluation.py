@@ -180,7 +180,7 @@ class ReportEvaluator:
         
         return results
 
-def run_comprehensive_evaluation(results_df=None, csv_path=None):
+def run_comprehensive_evaluation(results_df=None, csv_path=None, output_path=None):
     """Run comprehensive evaluation on inference results"""
     
     # Load inference results
@@ -262,11 +262,11 @@ def run_comprehensive_evaluation(results_df=None, csv_path=None):
     
     # Save detailed results
     os.makedirs("../results", exist_ok=True)
-    pd.DataFrame([results]).to_csv("../results/evaluation_metrics.csv", index=False)
-    print(f"\nDetailed results saved to: ../results/evaluation_metrics.csv")
-    
+    pd.DataFrame([results]).to_csv(output_path, index=False)
+    print(f"\nDetailed results saved to: {output_path}")
+
     return results
 
 
 if __name__ == "__main__":
-    run_comprehensive_evaluation(csv_path="../results/inference_results.csv")
+    run_comprehensive_evaluation(csv_path="../results/inference_results.csv", output_path="../results/evaluation_metrics.csv")
